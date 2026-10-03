@@ -1,0 +1,4 @@
+#!/bin/sh
+# The job-scout command. Claude Code puts a plugin's bin/ on PATH; npm links it from package.json.
+dir=$(dirname "$(readlink -f "$0" 2>/dev/null || realpath "$0")")
+exec node "$dir/../cli.mjs" "$@"

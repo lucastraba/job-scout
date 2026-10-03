@@ -1,0 +1,17 @@
+{
+  "name": "job-scout",
+  "description": "A daily job scout your agent runs: public job boards in, a scored digest and ready-to-send application packs out.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "keywords": [
+    "jobs",
+    "job-search",
+    "career",
+    "scout"
+  ],
+  "author": {
+    "name": "Lucas Traba",
+    "url": "https://github.com/lucastraba"
+  },
+  "repository": "https://github.com/lucastraba/job-scout"
+}

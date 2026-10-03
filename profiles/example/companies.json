@@ -1,0 +1,74 @@
+[
+  {
+    "name": "GitLab",
+    "ats": "greenhouse",
+    "slug": "gitlab",
+    "why": "All-remote, large Vue codebase, hires frontend engineers and managers across Europe"
+  },
+  {
+    "name": "Storyblok",
+    "ats": "greenhouse",
+    "slug": "storyblok",
+    "why": "Remote-first headless CMS with a Vue/Nuxt-heavy frontend"
+  },
+  {
+    "name": "Linear",
+    "ats": "ashby",
+    "slug": "linear",
+    "why": "Small product-focused team with a strong frontend culture, remote in Europe"
+  },
+  {
+    "name": "Supabase",
+    "ats": "ashby",
+    "slug": "supabase",
+    "why": "Fully remote, TypeScript-heavy dashboard and developer tooling"
+  },
+  {
+    "name": "PostHog",
+    "ats": "ashby",
+    "slug": "posthog",
+    "why": "All-remote, product engineers own whole features including the frontend"
+  },
+  {
+    "name": "Grafana Labs",
+    "ats": "greenhouse",
+    "slug": "grafanalabs",
+    "why": "Remote-first, large React/TypeScript frontend and design system"
+  },
+  {
+    "name": "GitBook",
+    "ats": "ashby",
+    "slug": "GitBook",
+    "why": "Remote in Europe, TypeScript product with a strong design focus"
+  },
+  {
+    "name": "Chromatic (Storybook)",
+    "ats": "ashby",
+    "slug": "chromatic",
+    "why": "Builds Storybook; design-system and frontend tooling work"
+  },
+  {
+    "name": "Sanity",
+    "ats": "ashby",
+    "slug": "sanity",
+    "why": "Remote-friendly, React/TypeScript studio and developer experience"
+  },
+  {
+    "name": "Automattic",
+    "ats": "greenhouse",
+    "slug": "automatticcareers",
+    "why": "Fully distributed, large JavaScript surface (WordPress, Calypso)"
+  },
+  {
+    "name": "Zapier",
+    "ats": "ashby",
+    "slug": "zapier",
+    "why": "All-remote, frontend platform and design-system teams"
+  },
+  {
+    "name": "Checkly",
+    "ats": "ashby",
+    "slug": "checkly",
+    "why": "Remote in Europe, TypeScript monitoring product built around Playwright"
+  }
+]

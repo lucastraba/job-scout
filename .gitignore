@@ -1,0 +1,4 @@
+node_modules/
+# Real profiles hold salaries and personal answers; only the example is tracked.
+profiles/*
+!profiles/example/

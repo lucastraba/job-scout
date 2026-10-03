@@ -1,0 +1,19 @@
+{
+  "name": "job-scout",
+  "private": true,
+  "type": "module",
+  "description": "A daily job scout your coding agent runs: public job boards in, a scored digest and application packs out.",
+  "scripts": {
+    "test": "JOB_SCOUT_PROFILE=./profiles/example node --test 'test/*.test.mjs'"
+  },
+  "version": "0.1.0",
+  "bin": {
+    "job-scout": "bin/job-scout"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "author": "Lucas Traba",
+  "license": "MIT",
+  "repository": "github:lucastraba/job-scout"
+}

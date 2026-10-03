@@ -1,0 +1,7 @@
+[
+  { "id": "remotive", "verified": true, "notes": "Free API; their terms ask for a link back to the Remotive URL (kept as the job url)." },
+  { "id": "remoteok", "verified": true, "notes": "First array element is a legal notice; terms ask for attribution and a followed link back." },
+  { "id": "weworkremotely", "verified": true, "notes": "RSS: front-end and full-stack categories." },
+  { "id": "jobicy", "verified": true, "url": "https://jobicy.com/api/v2/remote-jobs?count=100&geo=europe&industry=dev" },
+  { "id": "workingnomads", "verified": true, "notes": "Exposed jobs feed, filtered to development categories." }
+]

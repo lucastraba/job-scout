@@ -1,0 +1,14 @@
+{
+  "name": "job-scout",
+  "owner": {
+    "name": "lucastraba"
+  },
+  "plugins": [
+    {
+      "name": "job-scout",
+      "source": "./",
+      "description": "A daily job scout your agent runs: public job boards in, a scored digest and ready-to-send application packs out."
+    }
+  ],
+  "description": "job-scout: a daily job scout your coding agent runs."
+}

@@ -1,0 +1,219 @@
+{
+  "name": "Jane Doe",
+  "headline": "Frontend Lead · Design Systems · Developer Experience",
+  "contact": [
+    "Lisbon, Portugal · EU citizen",
+    "jane@example.com",
+    "linkedin.com/in/jane-doe-example"
+  ],
+  "notes": {
+    "replyWhere": "to your agent"
+  },
+  "cv": {
+    "variants": {
+      "main": "Jane-Doe-CV",
+      "leadership": "Jane-Doe-CV-Leadership"
+    },
+    "byLane": {
+      "frontend-platform": "Jane-Doe-CV",
+      "people-lead": "Jane-Doe-CV-Leadership",
+      "other": "Jane-Doe-CV"
+    },
+    "defaultVariant": "main"
+  },
+  "lanes": [
+    "frontend-platform",
+    "people-lead",
+    "other"
+  ],
+  "title": {
+    "include": [
+      "front[\\s-]?end",
+      "\\bui\\b",
+      "\\bweb (platform|engineer|developer|application)",
+      "\\bvue\\b",
+      "\\bnuxt\\b",
+      "typescript",
+      "javascript",
+      "design system",
+      "developer (experience|productivity|tools|platform)",
+      "\\bdev ?ex\\b",
+      "\\bdx\\b",
+      "devtools?",
+      "internal tool",
+      "\\btooling\\b",
+      "ai enablement",
+      "engineering manager",
+      "head of (engineering|frontend|front-end|platform)",
+      "\\b(tech|technical|team) lead\\b",
+      "\\blead (software |frontend |front-end )?engineer",
+      "\\b(staff|principal)\\b",
+      "full[\\s-]?stack",
+      "product engineer",
+      "platform engineer",
+      "\\bai (adoption|enablement|implementation|transformation|strateg|champion|platform|tooling|engineer)",
+      "applied ai",
+      "agentic",
+      "forward[\\s-]deployed"
+    ],
+    "generic": [
+      "software engineer",
+      "software developer",
+      "\\bengineer\\b"
+    ],
+    "exclude": [
+      "\\bintern(ship)?\\b",
+      "\\bjunior\\b",
+      "\\bgraduate\\b",
+      "working student",
+      "werkstudent",
+      "trainee",
+      "apprentice",
+      "\\bmid[\\s-]?level\\b",
+      "\\bassociate\\b",
+      "\\bios\\b",
+      "android",
+      "\\bmobile\\b",
+      "react native",
+      "flutter",
+      "\\bsales\\b",
+      "account (executive|manager)",
+      "marketing",
+      "recruit",
+      "talent",
+      "\\bdesigner\\b",
+      "support",
+      "customer",
+      "success",
+      "\\bqa\\b",
+      "quality assurance",
+      "test automation",
+      "analyst",
+      "embedded",
+      "firmware",
+      "hardware",
+      "\\bgame",
+      "unity",
+      "unreal",
+      "blockchain",
+      "solidity",
+      "c\\+\\+",
+      "golang",
+      "\\brust\\b",
+      "\\bjava\\b",
+      "\\.net\\b",
+      "\\bphp\\b",
+      "\\bruby\\b",
+      "python",
+      "salesforce",
+      "\\bsap\\b",
+      "\\belixir\\b",
+      "\\bscala\\b",
+      "\\bkotlin\\b",
+      "\\bswift\\b",
+      "(product|program|project) manager",
+      "\\b(engineer|developer)\\s+(i|ii|1|2)\\b"
+    ],
+    "excludeUnlessFocus": [
+      "back[\\s-]?end",
+      "devops",
+      "infrastructure",
+      "\\bsre\\b",
+      "site reliability",
+      "security",
+      "data scien",
+      "data engineer",
+      "machine learning",
+      "\\bml\\b",
+      "research(er)?\\b"
+    ],
+    "focus": "front[\\s-]?end|\\bui\\b|\\bvue\\b|\\bnuxt\\b|web platform|design system"
+  },
+  "descriptionSignals": "\\b(vue|nuxt|react|typescript|frontend|front-end|front end|design system|vite|svelte|angular)\\b",
+  "remoteOnly": true,
+  "region": {
+    "name": "EU",
+    "remote": "remote|anywhere|distributed|work from home|\\bwfh\\b|home[\\s-]?office|fully remote|telecommut",
+    "wide": "europe|\\beu\\b|e\\.u\\.|emea|european|worldwide|world-wide|anywhere|global|international|\\bcet\\b|\\bcest\\b|\\bgmt\\b|\\butc\\b",
+    "country": "austria|germany|spain|portugal|france|netherlands|belgium|ireland|italy|poland|czech|sweden|denmark|finland|norway|switzerland|estonia|latvia|lithuania|romania|bulgaria|greece|croatia|slovenia|slovakia|hungary|luxembourg|malta|cyprus|berlin|vienna|wien|madrid|barcelona|lisbon|amsterdam|paris|dublin|munich|warsaw|prague|\\bdach\\b",
+    "outsideText": "\\b(us|usa|u\\.s\\.|united states|north america|canada|americas)[\\s-]+(only|based only)\\b|must (be based|reside|live|be located) in the (us|u\\.s\\.|united states|usa|americas)|(us|u\\.s\\.)[\\s-]based (candidates|applicants|employees) only|authori[sz]ed to work in the (us|united states)",
+    "outside": "(?<![a-z])(us|usa|u\\.s\\.a?\\.?|united states|canada|north america|americas|latam|latin america|apac|asia|india|australia|new zealand|brazil|mexico|argentina|colombia|philippines|singapore|japan|israel|africa|nigeria|kenya|uk|united kingdom|england|london|pst|est|cst|mst|pacific time|eastern time|san francisco|new york|nyc|seattle|toronto)(?![a-z])"
+  },
+  "languages": {
+    "excluded": [
+      {
+        "name": "German",
+        "words": "\\b(und|der|die|das|wir|für|mit|sie|eine|ist|nicht|auf|bei|deine|dich|uns|oder|werden)\\b",
+        "minDistinctWords": 8,
+        "required": "(fluent|fluency|native|business[\\s-]?(level|fluent)|excellent|very good|strong)\\s+(in\\s+)?german(?!\\s+(is|would be|are)\\s+(a\\s+)?(plus|bonus|nice|advantage|benefit))|german\\s*\\(?\\s*(c1|c2)|german (language )?(skills )?(is |are )?(required|mandatory|a must)|deutsch\\w*\\s*\\(?\\s*(c1|c2|fließend|verhandlungssicher)|fließend\\w* deutsch|verhandlungssicher\\w* deutsch"
+      }
+    ]
+  },
+  "flags": [
+    [
+      "\\bvue\\b|\\bnuxt\\b",
+      "vue"
+    ],
+    [
+      "typescript",
+      "typescript"
+    ],
+    [
+      "\\breact\\b",
+      "react"
+    ],
+    [
+      "claude code|cursor|copilot|coding agents?|\\bmcp\\b|\\bllm\\b|agentic",
+      "ai-tooling"
+    ],
+    [
+      "\\bgerman\\b|deutsch",
+      "mentions-german"
+    ],
+    [
+      "contract(or)?\\b|freelance|b2b",
+      "contract"
+    ]
+  ],
+  "prescore": [
+    [
+      "\\b(staff|principal|lead|head of|manager)\\b",
+      "title",
+      3
+    ],
+    [
+      "front[\\s-]?end|\\bvue\\b|\\bnuxt\\b|\\bui\\b",
+      "title",
+      2
+    ],
+    [
+      "developer (experience|productivity|tools|platform)|\\bdev ?ex\\b|platform|tooling|ai enablement",
+      "title",
+      2
+    ],
+    [
+      "\\bvue\\b|\\bnuxt\\b",
+      "description",
+      2
+    ],
+    [
+      "typescript",
+      "description",
+      1
+    ],
+    [
+      "claude code|cursor|copilot|coding agents?|\\bmcp\\b|\\bllm\\b|agentic",
+      "description",
+      1
+    ],
+    [
+      "design system|monorepo|\\bnx\\b|vite",
+      "description",
+      1
+    ]
+  ],
+  "digest": {
+    "max": 8,
+    "minScore": 7
+  }
+}
