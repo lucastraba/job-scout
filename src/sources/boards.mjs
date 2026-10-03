@@ -77,10 +77,11 @@ export const boards = {
     }))
   },
 
-  workingnomads: async ({ url }) => {
+  // `categories` is a pattern over the board's category names ("Development", "Marketing", "Sales"...).
+  workingnomads: async ({ url, categories = 'develop|engineer|programm' }) => {
     const jobs = await getJson(url ?? 'https://www.workingnomads.com/api/exposed_jobs/')
     return jobs
-      .filter((job) => /develop|engineer|programm/i.test(job.category_name ?? ''))
+      .filter((job) => new RegExp(categories, 'i').test(job.category_name ?? ''))
       .map((job) => ({
         key: `workingnomads:${job.url}`,
         company: job.company_name,
@@ -92,5 +93,26 @@ export const boards = {
         description: htmlToText(job.description),
         salary: null,
       }))
+  },
+
+  // Get on Board: Latin America, many postings in Spanish, and not only tech. Categories are ids from
+  // https://www.getonbrd.com/api/v0/categories (programming, sales, digital-marketing, customer-support, hr...).
+  getonbrd: async ({ categories = ['programming'], pages = 2 }) => {
+    const requests = categories.flatMap((category) =>
+      Array.from({ length: pages }, (_, page) =>
+        getJson(`https://www.getonbrd.com/api/v0/categories/${category}/jobs?per_page=100&page=${page + 1}&expand=%5B%22company%22%5D`)))
+    const jobs = (await Promise.all(requests)).flatMap(({ data = [] }) => data)
+    const where = { fully_remote: 'Remote', remote_local: 'Remote, local only', hybrid: 'Hybrid', no_remote: 'On-site' }
+    return jobs.map(({ id, attributes: job }) => ({
+      key: `getonbrd:${id}`,
+      company: job.company?.data?.attributes?.name ?? '',
+      title: job.title,
+      location: [where[job.remote_modality], ...(job.countries ?? [])].filter(Boolean).join(' · '),
+      remote: job.remote_modality === 'fully_remote' || job.remote_modality === 'remote_local',
+      url: `https://www.getonbrd.com/jobs/${id}`,
+      postedAt: job.published_at ? new Date(job.published_at * 1000).toISOString() : null,
+      description: htmlToText([job.description, job.functions, job.desirable, job.benefits].filter(Boolean).join('\n')),
+      salary: job.min_salary ? `${job.min_salary}–${job.max_salary ?? job.min_salary} USD / month` : null,
+    }))
   },
 }

@@ -34,6 +34,14 @@ Rewrite every field. The example shows the shape.
 - `languages.excluded`: one entry per language they don't speak, with `words` (15–20 common function words of that language, to spot postings written in it) and `required` (phrases that make it mandatory, not "a plus").
 - `flags`: tags shown next to each candidate (`[pattern, "tag"]`); `prescore`: `[pattern, "title" | "description", points]`, which only orders candidates when there are too many.
 - `digest`: `max` roles per digest and `minScore` to make it.
+- `boards`: the job boards are set up for software developers in Europe by default. For anyone else, point them at the right categories and region, and turn on Get on Board for Latin America:
+  - `remotive.url`: `https://remotive.com/api/remote-jobs?category=<software-dev|marketing|sales|customer-support|design|product|hr|finance-legal|...>`
+  - `jobicy.url`: `https://jobicy.com/api/v2/remote-jobs?count=100&geo=<europe|latam|usa|...>&industry=<dev|marketing|...>` (leave `industry` out for all)
+  - `weworkremotely.urls`: category RSS feeds, e.g. `https://weworkremotely.com/categories/remote-sales-and-marketing-jobs.rss`
+  - `workingnomads.categories`: a pattern over its category names (`"sales|marketing"`)
+  - `getonbrd`: `{ "enabled": true, "categories": ["sales", "digital-marketing", ...] }`, ids from `https://www.getonbrd.com/api/v0/categories`. Many postings are in Spanish.
+  - `"hn": { "enabled": false }` drops Hacker News, which is almost only tech; `{ "enabled": false }` drops any board.
+  Check every URL you set by opening it once; a wrong category returns nothing rather than failing.
 
 Patterns are JavaScript regular expressions written as JSON strings, matched case-insensitively, so `\b` is written `\\b`. After writing, run `job-scout run --dry` once; a bad pattern fails right away with its text.
 
@@ -49,7 +57,7 @@ Show both files to them and fix what they correct.
 
 Propose 20–40 companies that hire for their lanes in places they can work, and that publish jobs on a supported job board: Greenhouse (`boards.greenhouse.io/<slug>`), Lever (`jobs.lever.co/<slug>`), Ashby (`jobs.ashbyhq.com/<slug>`), Personio (`<slug>.jobs.personio.de`), Workable (`apply.workable.com/<slug>`), Recruitee (`<slug>.recruitee.com`) and SmartRecruiters (`careers.smartrecruiters.com/<slug>`). Find each company's careers page and the slug in its job-board URL.
 
-Check every one with `job-scout check <ats> <slug>`, and keep only those that answer. Write them to `companies.json` as `{ "name", "ats", "slug", "why" }`; `why` is one line on why it fits them. Then run `job-scout check --all` and show them the result. Hacker News "Who is hiring" and five remote job boards are always included.
+Check every one with `job-scout check <ats> <slug>`, and keep only those that answer. Write them to `companies.json` as `{ "name", "ats", "slug", "why" }`; `why` is one line on why it fits them. Then run `job-scout check --all` and show them the result. Hacker News "Who is hiring" and the job boards from `boards` are included on top.
 
 ## 7. Calibrate the filters
 

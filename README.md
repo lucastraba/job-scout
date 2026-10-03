@@ -8,7 +8,7 @@ What it never does: apply for you, message anyone, or touch LinkedIn. It reads p
 
 ## How it works
 
-1. **Fetch**: Hacker News "Who is hiring", the public job boards of the companies in your profile (Greenhouse, Lever, Ashby, Personio, Workable, Recruitee, SmartRecruiters), and five remote job boards (Remotive, RemoteOK, We Work Remotely, Jobicy, Working Nomads).
+1. **Fetch**: Hacker News "Who is hiring", the public job boards of the companies in your profile (Greenhouse, Lever, Ashby, Personio, Workable, Recruitee, SmartRecruiters), and remote job boards (Remotive, RemoteOK, We Work Remotely, Jobicy, Working Nomads, and Get on Board for Latin America). The boards default to software roles in Europe; the profile sets their categories and region, so it works for sales, marketing, support or design roles elsewhere too.
 2. **Filter**: title patterns, seniority, remote and region rules, languages you don't speak, posting age. All of it comes from your profile, and `run --dry --why` shows what each rule dropped.
 3. **Score**: your agent reads your `about.md` and scores each new candidate out of 10 with your rubric. Up to 60 per run; the rest wait for the next one.
 4. **Digest**: roles scoring 7 or more get a permanent number and a Markdown note (Obsidian-friendly). You reply `👍 17`, `pass 17`, `applied 17` or `why 17`.

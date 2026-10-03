@@ -25,7 +25,7 @@ const cli = (command, { send = false } = {}) =>
   `node ${join(root, 'scout.mjs')} ${command} --profile ${config.profileDir}${send && config.delivery ? ' --send' : ''}`
 
 const fetchAll = async () => {
-  const sources = loadSources(join(root, 'sources'), config.companies)
+  const sources = loadSources(join(root, 'sources'), config.companies, config.boards)
   const results = await settleAll(sources.map((source) => source.run))
   const failed = []
   const jobs = []

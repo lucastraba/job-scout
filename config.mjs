@@ -59,6 +59,7 @@ export const config = {
   // Optional push delivery for digests and packs (`--send`). Hermes users leave it out; Hermes delivers.
   delivery: profile.delivery ?? null,
   companies: join(profileDir, 'companies.json'),
+  boards: profile.boards ?? {},
   cvData: expand(profile.cv?.data),
 
   // The CV variant each lane gets, by file name without .pdf.

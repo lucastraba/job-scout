@@ -1,7 +1,8 @@
 [
-  { "id": "remotive", "verified": true, "notes": "Free API; their terms ask for a link back to the Remotive URL (kept as the job url)." },
-  { "id": "remoteok", "verified": true, "notes": "First array element is a legal notice; terms ask for attribution and a followed link back." },
-  { "id": "weworkremotely", "verified": true, "notes": "RSS: front-end and full-stack categories." },
-  { "id": "jobicy", "verified": true, "url": "https://jobicy.com/api/v2/remote-jobs?count=100&geo=europe&industry=dev" },
-  { "id": "workingnomads", "verified": true, "notes": "Exposed jobs feed, filtered to development categories." }
+  {"id": "remotive", "verified": true, "notes": "Free API; their terms ask for a link back to the Remotive URL (kept as the job url). Default category software-dev; a profile can set `url` (?category=marketing, sales, customer-support...)."},
+  {"id": "remoteok", "verified": true, "notes": "First array element is a legal notice; terms ask for attribution and a followed link back."},
+  {"id": "weworkremotely", "verified": true, "notes": "RSS: front-end and full-stack categories by default; a profile can set `urls` to other category feeds."},
+  {"id": "jobicy", "verified": true, "url": "https://jobicy.com/api/v2/remote-jobs?count=100&geo=europe&industry=dev", "notes": "Defaults to Europe and development; a profile can set `url` with other geo/industry values (geo=latam, industry=marketing)."},
+  {"id": "workingnomads", "verified": true, "notes": "Exposed jobs feed; `categories` is a pattern over category names (default development)."},
+  {"id": "getonbrd", "verified": true, "enabled": false, "notes": "Latin America, often in Spanish, many non-tech categories. Off unless a profile enables it with `categories`."}
 ]
