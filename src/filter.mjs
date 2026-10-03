@@ -62,7 +62,7 @@ export const classify = (job, now = Date.now()) => {
   const titleProblem = job.source === 'hn' ? hnVerdict(job) : titleVerdict(job.title, description)
   if (titleProblem) return { keep: false, reason: titleProblem }
   if (isStale(job, now)) return { keep: false, reason: 'stale' }
-  if (config.remoteOnly && !isRemote(job)) return { keep: false, reason: 'not remote' }
+  if (config.remoteOnly && !isRemote(job) && !config.region.onsite.test(job.location ?? '')) return { keep: false, reason: 'not remote' }
   const region = regionOf(job.location ?? '')
   const outside = `outside ${config.region.name}`
   if (region === 'outside') return { keep: false, reason: outside }

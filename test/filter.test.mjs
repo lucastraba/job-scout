@@ -48,6 +48,18 @@ test('requires remote work open to someone living in the EU', () => {
   assert.equal(verdict({ location: 'Remote', description: 'Vue role. US-based candidates only.' }).reason, 'outside EU')
 })
 
+test('keeps on-site roles only in the cities the profile names', async () => {
+  const { config } = await import('../config.mjs')
+  const before = config.region.onsite
+  config.region.onsite = /vienna|wien/i
+  try {
+    assert.equal(verdict({ location: 'Vienna, Austria', remote: false }).keep, true)
+    assert.equal(verdict({ location: 'Berlin, Germany', remote: false }).reason, 'not remote')
+  } finally {
+    config.region.onsite = before
+  }
+})
+
 test('marks single-country remote roles so the scorer can weigh them', () => {
   assert.equal(verdict({ location: 'Remote, Spain' }).region, 'country')
   assert.equal(verdict({ location: 'Remote' }).region, 'unknown')

@@ -111,6 +111,7 @@ export const config = {
 
   descriptionSignals: pattern(profile.descriptionSignals ?? '(?!)'),
 
+  // true: non-remote roles are dropped unless their location matches region.onsite (cities they'd commute to).
   remoteOnly: profile.remoteOnly ?? true,
 
   region: {
@@ -121,6 +122,7 @@ export const config = {
     // Body text that rules a job out even when its location field just says "Remote".
     outsideText: pattern(profile.region?.outsideText ?? '(?!)'),
     outside: pattern(profile.region?.outside ?? '(?!)'),
+    onsite: pattern(profile.region?.onsite ?? '(?!)'),
   },
 
   // Languages the person doesn't speak: a posting written in one, or requiring it, is dropped.
