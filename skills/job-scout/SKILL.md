@@ -17,6 +17,6 @@ The `job-scout` command fetches public job boards, filters, stores and files; yo
 
 If `job-scout profiles` lists several, pass `--profile <name>` to every command.
 
-If `job-scout` is not on PATH: with the Claude Code plugin it is in the plugin's `bin/`; otherwise install it with `npm install -g github:lucastraba/job-scout` (Node 22.13 or newer).
+If `job-scout` is not on PATH: with the Claude Code plugin it is in the plugin's `bin/`; otherwise `git clone https://github.com/lucastraba/job-scout ~/job-scout && npm install -g ~/job-scout` (Node 22.13 or newer).
 
 Never apply, message anyone, or log into or automate LinkedIn. Agents prepare; the person decides and submits.

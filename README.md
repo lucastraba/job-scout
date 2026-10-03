@@ -28,7 +28,8 @@ Node 22.13 or newer. The scout has no dependencies; cover letter PDFs need Chrom
 **Codex, Cursor, OpenCode** (or Claude Code without the plugin):
 
 ```bash
-npm install -g github:lucastraba/job-scout
+git clone https://github.com/lucastraba/job-scout ~/job-scout
+npm install -g ~/job-scout     # puts the job-scout command on your PATH; `git pull` there updates it
 job-scout install-skill        # copies the skill to ~/.agents/skills and ~/.claude/skills
 ```
 
