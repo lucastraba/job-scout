@@ -97,6 +97,8 @@ Remotive and RemoteOK ask for a link back to the original posting; the notes and
 
 ## Development
 
+Why it's built this way, what was rejected, and traps found in testing: [docs/design.md](docs/design.md).
+
 ```bash
 npm test     # runs against profiles/example
 ```
