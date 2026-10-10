@@ -115,4 +115,30 @@ export const boards = {
       salary: job.min_salary ? `${job.min_salary}–${job.max_salary ?? job.min_salary} USD / month` : null,
     }))
   },
+
+  // Himalayas: remote jobs in every field, searched by free text (https://himalayas.app/docs/remote-jobs-api).
+  // Each query is one search ("revit", "autocad drafter"); `country` keeps jobs open to that country (a name or
+  // ISO code). The API is rate limited and pages hold 20 jobs, so requests go one at a time.
+  himalayas: async ({ queries = [], country, pages = 2 }) => {
+    const jobs = new Map()
+    for (const query of queries) {
+      for (let page = 1; page <= pages; page++) {
+        const params = new URLSearchParams({ q: query, sort: 'recent', page: String(page), ...(country && { country }) })
+        const { jobs: found = [] } = await getJson(`https://himalayas.app/jobs/api/search?${params}`)
+        for (const job of found) jobs.set(job.guid, job)
+        if (!found.length) break
+      }
+    }
+    return [...jobs.values()].map((job) => ({
+      key: `himalayas:${job.guid}`,
+      company: job.companyName,
+      title: job.title,
+      location: job.locationRestrictions?.length ? job.locationRestrictions.join(' · ') : 'Worldwide',
+      remote: true,
+      url: job.applicationLink ?? job.guid,
+      postedAt: job.pubDate ? new Date(Number(job.pubDate) * 1000).toISOString() : null,
+      description: htmlToText(job.description),
+      salary: salaryRange(job.minSalary, job.maxSalary ?? job.minSalary, job.currency, job.salaryPeriod),
+    }))
+  },
 }

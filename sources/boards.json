@@ -4,5 +4,6 @@
   {"id": "weworkremotely", "verified": true, "notes": "RSS: front-end and full-stack categories by default; a profile can set `urls` to other category feeds."},
   {"id": "jobicy", "verified": true, "url": "https://jobicy.com/api/v2/remote-jobs?count=100&geo=europe&industry=dev", "notes": "Defaults to Europe and development; a profile can set `url` with other geo/industry values (geo=latam, industry=marketing)."},
   {"id": "workingnomads", "verified": true, "notes": "Exposed jobs feed; `categories` is a pattern over category names (default development)."},
-  {"id": "getonbrd", "verified": true, "enabled": false, "notes": "Latin America, often in Spanish, many non-tech categories. Off unless a profile enables it with `categories`."}
+  {"id": "getonbrd", "verified": true, "enabled": false, "notes": "Latin America, often in Spanish, many non-tech categories. Off unless a profile enables it with `categories`."},
+  {"id": "himalayas", "verified": true, "enabled": false, "notes": "Documented free API, remote jobs in every field (drafting, BIM, finance, ops...). Searched by `queries`, optionally limited to a `country`. Rate limited, data refreshes daily. Terms ask for a visible link back; the job url is the Himalayas page."}
 ]

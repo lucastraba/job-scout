@@ -40,6 +40,7 @@ Rewrite every field. The example shows the shape.
   - `weworkremotely.urls`: category RSS feeds, e.g. `https://weworkremotely.com/categories/remote-sales-and-marketing-jobs.rss`
   - `workingnomads.categories`: a pattern over its category names (`"sales|marketing"`)
   - `getonbrd`: `{ "enabled": true, "categories": ["sales", "digital-marketing", ...] }`, ids from `https://www.getonbrd.com/api/v0/categories`. Many postings are in Spanish.
+  - `himalayas`: `{ "enabled": true, "queries": ["revit", "autocad drafter", ...], "country": "Argentina" }`. Remote jobs in every field, found by keyword, so it reaches roles the category boards miss (drafting, BIM, engineering, finance). Use 3–8 short queries that match their titles and tools; each costs one or two requests. `country` keeps jobs open to people in that country.
   - `"hn": { "enabled": false }` drops Hacker News, which is almost only tech; `{ "enabled": false }` drops any board.
   Check every URL you set by opening it once; a wrong category returns nothing rather than failing.
 
