@@ -51,6 +51,8 @@ export const config = {
   notesFrontmatter: profile.notes?.frontmatter ?? {},
   // Where the person answers the digest, shown in each note: "in the 🧭 Job Search topic", "to your agent".
   replyWhere: profile.notes?.replyWhere ?? 'to your agent',
+  // Replaces the "Reply 👍 n to shortlist…" line that ends each digest. "" drops it: for people who only read the digest and can't answer it.
+  digestFooter: profile.notes?.digestFooter,
 
   // Shown on the built-in cover letter: a line under the name and contact lines on the right.
   headline: profile.headline ?? '',

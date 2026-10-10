@@ -214,8 +214,8 @@ const record = (file) => {
   ].join('\n')
   if (entries.length === 0) return `${header}\nNothing scored ${config.digest.minScore}+ today.`
   const example = entries[0].ref
-  return [header, ...entries.map((entry) => entry.text), `Reply "👍 ${example}" to shortlist, "pass ${example}" to skip, "why ${example}" for the full note.`]
-    .join('\n\n')
+  const footer = config.digestFooter ?? `Reply "👍 ${example}" to shortlist, "pass ${example}" to skip, "why ${example}" for the full note.`
+  return [header, ...entries.map((entry) => entry.text), footer].filter(Boolean).join('\n\n')
 }
 
 const mark = (refOrKey, stage, comment) => {

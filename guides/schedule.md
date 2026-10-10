@@ -39,6 +39,8 @@ To get the digest and packs on the phone:
 
 Delivery is one-way: replies (`👍 17`) go to the agent, in a chat with the job-scout skill (`job-scout guide replies`). Hermes users can bind the skill to a Telegram topic instead and reply there.
 
+If the person only reads the digest and someone else handles their replies, set `"notes": { "digestFooter": "…" }` in the profile to replace the "Reply 👍 n" line at the end of each digest, or `""` to drop it.
+
 ## Hermes
 
 Hermes runs the scout as a cron job with a pre-run script, `job-scout run --profile <name>`, whose output becomes the prompt context; the prompt says to follow `job-scout guide scout`. Hermes delivers the digest itself, so the profile needs no `delivery` section.
