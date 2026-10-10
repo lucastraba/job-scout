@@ -74,7 +74,7 @@ export const chosenCv = (markdown) => {
 const variantOf = (cvFile) =>
   Object.entries(config.cv.variants).find(([, name]) => `${name}.pdf` === cvFile)?.[0] ?? config.cv.defaultVariant
 
-const slug = (text) => text.split(' (')[0].normalize('NFKD').replace(/[^\w]+/g, '-').replace(/^-|-$/g, '')
+const slug = (text) => text.split(' (')[0].normalize('NFKD').replace(/\p{M}/gu, '').replace(/[^\w]+/g, '-').replace(/^-|-$/g, '')
 
 export const buildLetterPdf = ({ job, letter, cvFile }) => {
   mkdirSync(config.letters.outDir, { recursive: true })

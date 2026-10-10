@@ -35,7 +35,7 @@ const profile = JSON.parse(readFileSync(join(profileDir, 'profile.json'), 'utf8'
 // Patterns are stored as strings and always match case-insensitively.
 const pattern = (source, flags = 'i') => new RegExp(source, flags)
 const patterns = (sources = []) => sources.map((source) => pattern(source))
-const slug = (text) => text.normalize('NFKD').replace(/[^\w]+/g, '-').replace(/^-|-$/g, '')
+const slug = (text) => text.normalize('NFKD').replace(/\p{M}/gu, '').replace(/[^\w]+/g, '-').replace(/^-|-$/g, '')
 
 const stateDir = expand(profile.stateDir) ?? join(homedir(), '.local/state/job-scout', slug(profile.name).toLowerCase())
 const notesDir = expand(profile.notes?.dir) ?? join(stateDir, 'notes')
